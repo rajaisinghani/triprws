@@ -1,0 +1,29 @@
+<!--pages/moments/moments.wxml-->
+<cu-custom bgColor="bg-gradual-red" isBack="{{false}}">
+	<view slot="backText">返回</view>
+	<view slot="content">足迹</view>
+</cu-custom>
+
+<view class="row">
+  <view wx:for="{{images}}" wx:key="{{item.index}}" class="item">
+    <image class="image" src="https://wechat.useritech.com/uploads/moments/{{item.small_image}}" mode="scaleToFill" bindtap="show" data-url="{{item}}" data-index="{{index}}"></image>
+    <view class="icons">
+      <view class="group" bindtap="share">
+        <image class="icon" src="../../assets/share-icon.png" mode="scaleToFill"></image>
+        <text>分享</text>
+      </view>
+      <view class="group" bindtap="buy">
+        <image class="icon" src="../../assets/buy-icon.png" mode="scaleToFill"></image>
+        <text>购买</text>
+      </view>
+    </view>
+
+    <view class="modal-box" hidden="{{flags[index]}}" data-index="{{index}}" bindtap="hide">
+      <view class="modal-content">
+        <image src="https://wechat.useritech.com/uploads/moments/{{item.medium_image}}"/>
+        <button class="buyButton" data-url="{{item.medium_image}}" bindtap="openFullSized">购买照片</button>
+      </view>
+    </view>
+
+  </view>
+</view>

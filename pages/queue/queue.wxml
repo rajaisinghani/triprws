@@ -1,0 +1,31 @@
+<!--pages/queue/queue.wxml-->
+<cu-custom bgColor="bg-gradual-red" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">Queue Registration</view>
+</cu-custom>
+
+<view class="main">
+  <image class="image" src="{{queue.image}}"></image>
+  <view class="text-container">
+    <view class="title-text">
+      <text>Thank you for waiting at {{queue.title}}</text>
+    </view>
+    <view class="green-dots">
+      <view class="dot"></view>
+      <view class="dot"></view>
+      <view class="dot"></view>
+    </view>
+    <view class="description-text">
+      <text>Here's your position in the queue</text>
+    </view>
+    <view class="queue-number"><text>{{queue.queue_number}}</text></view>
+    <view class="reference">
+      <text>Ref #: {{queue.ref_number}}</text>
+    </view>
+    <view class="description-text">
+      <text>We'll text you when your turn is almost here</text>
+    </view>
+    <button bindtap="leave" class="button">Leave queue</button>
+  </view>
+
+</view>

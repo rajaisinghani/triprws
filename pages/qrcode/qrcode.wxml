@@ -1,0 +1,20 @@
+<!--pages/qrcode/qrcode.wxml-->
+
+<!-- background image -->
+<image src="http://wechat.useritech.com/asset/background_red.png" mode="scaleToFill" class="background-image"></image>
+
+<cu-custom bgColor="var(--ghostWhite)" isBack="{{true}}">
+  <view slot="backText"></view>
+	<view slot="content">票卷二维码</view>
+</cu-custom>
+
+
+
+<view class="section border">
+  <view class="title"><text>圣淘沙天际线斜坡滑</text></view>
+  <view class="description"><text>既是交通工具也是观光景点，圣淘沙天际线提供游客刺激又好玩的一天</text></view>
+</view>
+<view class="section">
+  <image src="../../assets/qrcode.png" style="width: 100%; height: 100%"></image>
+</view>
+

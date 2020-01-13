@@ -1,0 +1,51 @@
+<!--index.wxml-->
+<view class="main">
+  <view class="userinfo">
+    <image src="http://wechat.useritech.com/asset/background_red.png" mode="scaleToFill" class="background-image"></image>
+
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <image class="crown" src="../../assets/crown.png" hidden="{{hideVip}}"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+
+  <view class="header">
+    <view style="width: 50%; text-align: center; color: {{ticketColor}}; border-style: solid; border-color: {{ticketColor}}; border-width: 0 0 4px 0; padding: 10px" bindtap="toggleTicket">
+      <text>购票历史</text>
+    </view>
+    <view style="width: 50%; text-align: center; color: {{qrColor}}; border-style: solid; border-color: {{qrColor}}; border-width: 0 0 4px 0; padding: 10px" bindtap="toggleQr">
+      <text>我的二维码</text>
+    </view>
+  </view>
+
+  <button class='button green-button' bindtap="scan">
+    <image class="button-icon" src="../../assets/qr-code-scan.png"></image>
+    <text>扫描排队</text>
+  </button>
+
+  <view class="row" wx:for="{{information}}" wx:key="{{item.id}}" hidden="{{hideTickets}}">
+    <image style="width: 30%; height: 100%; margin-right: 10px" src="https://wechat.useritech.com/uploads/attractions/{{item.image}}" mode="scaleToFill"></image>
+    <view style="width: 70%">
+      <view class="title-text"><text>{{item.title}}</text></view>
+      <view class="description-text"><text>{{item.excerpt}}</text></view>
+      <view class="price-text">
+        <text class="red redeem-text" bindtap="qrcode" data-id="{{item.id}}">使用票卷</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="qrcode" hidden="{{hideQr}}">
+    <button class="button red-button" bindtap="vip" hidden="{{!hideVip}}">
+      <image class="button-icon" src="../../assets/star_white.png"></image>
+      <text>晋升为VIP</text>
+    </button>
+    <canvas class='canvas' canvas-id='canvas' style='width:{{qrcodeWidth}}px; height:{{qrcodeWidth}}px; margin-top: 25px'></canvas>
+  </view>
+
+  <image
+  src="{{floatingButtonSource}}" class="floating-button" bindtap="navigateToSelections">
+  </image>
+
+</view>

@@ -1,0 +1,2 @@
+<!--pages/eticket/eticket.wxml-->
+<web-view src="{{eTicketUrl}}"></web-view>

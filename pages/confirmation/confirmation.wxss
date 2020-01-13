@@ -1,0 +1,104 @@
+.main {
+  background: white;
+  height: 100%;
+  margin: 15px;
+}
+
+page {
+  background-color: #f7f7f7;
+}
+
+.top-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 5px;
+}
+
+.tick {
+  width: 60px;
+  height: 60px;
+  margin: 15px;
+}
+
+.title-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+}
+
+.price-text {
+  font-size: 18px;
+}
+
+.blue {
+  color: #4a90e2;
+}
+
+.red-text {
+  color: crimson;
+}
+
+.red {
+  background-color: crimson;
+}
+
+.black {
+  background-color: #4a4a4a;
+}
+
+.green {
+  background-color: yellowgreen;
+}
+
+.grey {
+  color: #4a4a4a;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px;
+}
+
+.description-text {
+  font-size: 18px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.excerpt-text {
+  font-size: 14px;
+}
+
+.title-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.cart-summary {
+  font-size: 20px;
+  margin-top: 35px;
+  margin: 15px;
+}
+
+.button {
+  height: 45px;
+  width: 45%;
+  color: white;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.button-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: white;
+  padding: 10px;
+}

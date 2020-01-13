@@ -1,0 +1,73 @@
+<!--pages/checkout/checkout.wxml-->
+<cu-custom bgColor="bg-gradual-red" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">订单摘要</view>
+</cu-custom>
+
+<view class="main">
+  <view class="row" wx:for="{{information}}" wx:key="{{item.id}}">
+    <view style="width: 70%">
+      <view class="title-text"><text>{{item.title}}</text></view>
+      <view class="description-text"><text>{{item.description}}</text></view>
+    </view>
+    <view style="margin-top: auto; margin-bottom: auto">
+      <text>x 1</text>
+    </view>
+  </view>
+
+  <view style="border-color:grey; border-style: solid; border-width: 1px 0px 1px 0px; color: grey">
+
+    <view class="row">
+      <view style="width: 60%; height: 100%">
+        <view><text>小计</text></view>
+      </view>
+      <view style="margin-top: auto; margin-bottom: auto">
+        <text>${{total}}</text>
+      </view>
+    </view>
+
+    <view class="row">
+      <view style="width: 60%; height: 100%">
+        <view><text>运输费用</text></view>
+      </view>
+      <view style="margin-top: auto; margin-bottom: auto">
+        <text>${{shipping}}</text>
+      </view>
+    </view>
+
+    <view class="row">
+      <view style="width: 60%; height: 100%">
+        <view><text>税金</text></view>
+      </view>
+      <view style="margin-top: auto; margin-bottom: auto">
+        <text>${{tax}}</text>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="row">
+    <view style="width: 60%; height: 100%">
+      <view><text class="price-text">总额</text></view>
+    </view>
+    <view style="margin-top: auto; margin-bottom: auto">
+      <text class="price-text">${{total + shipping + tax}}</text>
+    </view>
+  </view>
+
+  <view class="payment-text">
+    <text>请点击付款方式</text>
+  </view>
+
+  <view class="row">
+    <image src="../../assets/alipay-logo.png" style="width: 50%; height: 70px; margin: 10px; border-width: 2px; border-style: solid; border-color: {{color1}}" bindtap="changeColor1" mode="scaleToFill"></image>
+    <image src="../../assets/wechatpay-logo.png" style="width: 50%; height: 70px; margin: 10px; border-width: 2px; border-style: solid; border-color: {{color2}}" bindtap="changeColor2" mode="scaleToFill"></image>
+  </view>
+
+  <view style="display: flex; justify-content: space-around; width: 100%">
+    <text>下订单即代表您同意用户条款</text>
+  </view>
+
+  <button class="button black" bindtap="createTransaction">Buy</button>
+
+ </view>

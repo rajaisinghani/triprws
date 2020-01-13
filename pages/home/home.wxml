@@ -1,0 +1,27 @@
+<!--pages/home/home.wxml-->
+
+<!-- background image -->
+<image src="http://wechat.useritech.com/asset/background_home.png" mode="scaleToFill" class="background-image"></image>
+
+<view class="container">
+  <view class="header">
+    <text class="header-text">我想要....</text>
+  </view>
+
+  <wux-select id="wux-select1" />
+
+  <view class="page">
+    <view class="page__bd">
+      <wux-cell-group>
+        <wux-cell title="选一个" is-link extra="{{displayValue2}}" bind:click="initialSelection"></wux-cell>
+        <wux-cell id="hide" title="选一个" is-link extra="{{displayValue1}}" bind:click="onClick1"></wux-cell>
+        <wux-date-picker mode="time" value="{{time}}" lang="{{lang}}" use12Hours data-index="7" data-mode="time" bind:confirm="onConfirm">
+          <wux-cell title="时间" is-link extra="{{displayValue7}}"></wux-cell>
+        </wux-date-picker>
+      </wux-cell-group>
+    </view>
+  </view>
+
+  <button class="button red" bindtap="viewItinerary">行程</button>
+
+</view>

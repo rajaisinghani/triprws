@@ -1,0 +1,29 @@
+<!--pages/tickets/tickets.wxml-->
+<cu-custom bgColor="bg-gradual-red" isBack="{{false}}">
+	<view slot="content">票卷</view>
+</cu-custom>
+
+<view class="column">
+  <view class="row" wx:for="{{attractions}}" wx:key="{{item.id}}" id="tapTest" data-item="{{item}}" bindtap="openProductDetail">
+      <image style="width: 40%; height: 100%; margin-right: 10px" src="https://wechat.useritech.com/uploads/attractions/{{item.image}}" mode="scaleToFill"></image>
+      <view style="width: 60%">
+        <view class="title-text"><text>{{item.title}}</text></view>
+        <view class="description-text"><text>{{item.excerpt}}</text></view>
+        <view class="price-text">
+          <text class="red">${{item.price}} </text><text class="black">x 1</text>
+        </view>
+      </view>
+      <view class="arrow">
+        <image style="width: 20px; height: 20px" src="../../assets/arrow-right.png"mode="scaleToFill"></image>
+      </view>
+  </view>
+</view>
+
+<image
+  src="../../assets/shopping-cart.png" class="cart" bindtap="navigateToCart">
+</image>
+
+<image
+  src="../../assets/list.png" class="floating-button" bindtap="navigateToSelections">
+</image>
+

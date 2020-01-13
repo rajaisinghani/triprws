@@ -1,0 +1,47 @@
+<cu-custom bgColor="bg-gradual-red" isBack="{{false}}">
+	<view slot="content">地图</view>
+</cu-custom>
+
+<view class="queue" hidden="{{queueHidden}}">
+  <view class="title-text">
+    <text>你现在的排队号码{{queue.queue_number}}</text>
+  </view>
+  <view class="title-text">
+    <text>剩下的时间: {{queue.queue_time}}</text>
+  </view>
+  <view class="header-text black">
+    <text>等候时你你能做什么呢？</text>
+  </view>
+</view>
+
+<map 
+  id="bgMap" 
+  longitude="{{longitude}}" 
+  latitude="{{latitude}}" 
+  scale="16" 
+  show-location="true" 
+  markers="{{markers}}" 
+  bindmarkertap="markertap">
+</map> 
+
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+  <view class="picker">
+    当前选择：{{array[index]}}
+  </view>
+</picker>
+
+<view>
+  <view class="row" bindtap='goToTickets' wx:for="{{attractions}}" wx:key="{{item.id}}" data-item="{{item}}">
+    <image style="width: 40%; height: 100%; margin-right: 10px" src="/images/pic.jpg" mode="scaleToFill"></image>
+      <view style="width: 47%">
+        <view class="title-text"><text>{{item.title}}</text></view>
+        <view class="address-text"><text>{{item.description}}</text></view>
+        <view class="distance-text">
+          <text class="red">離我</text><text class="black">{{item.distance}}</text>
+        </view>
+      </view>
+      <view class="arrow">
+        <image style="width: 20px; height: 20px" src="/images/arrow.png"mode="scaleToFill"></image>
+      </view>
+  </view>
+</view>

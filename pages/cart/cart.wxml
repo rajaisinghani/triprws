@@ -1,0 +1,20 @@
+<!--pages/cart/cart.wxml-->
+<cu-custom bgColor="bg-gradual-red" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">购物车</view>
+</cu-custom>
+
+<view class="main">
+    <view class="row" wx:for="{{information}}" wx:key="{{item.id}}">
+      <image style="width: 40%; height: 100%; margin-right: 10px" src="https://wechat.useritech.com/uploads/attractions/{{item.image}}" mode="scaleToFill"></image>
+      <view style="width: 60%">
+        <view class="title-text"><text>{{item.title}}</text></view>
+        <view class="description-text"><text>{{item.description}}</text></view>
+        <view class="price-text">
+          <text class="red">${{item.price}} </text><text style="color: rgb(80, 79, 79)">x 1</text>
+        </view>
+      </view>
+  </view>
+
+  <button class="button black" bindtap="checkout">结帐</button>
+</view>

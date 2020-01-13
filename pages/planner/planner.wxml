@@ -1,0 +1,66 @@
+<!--pages/profile/profile.wxml-->
+<cu-custom bgColor="bg-gradual-red" isBack="{{false}}">
+	<view slot="backText">返回</view>
+	<view slot="content">行程</view>
+</cu-custom>
+
+<view class="cu-timeline">
+  <view class="cu-time">02-08-19</view>
+
+  <view wx:for="{{attractions}}" wx:key="{{item.id}}" class="cu-item">
+    <view class="content" style="padding-top: 0px">
+      <view class="time">{{times[index]}}</view>
+      <view class="row">
+        <image style="width: 120px; height: 120px; margin-right: 10px; margin-top: 5px" src="https://wechat.useritech.com//uploads/attractions/{{item.image}}" mode="scaleToFill"></image>
+        <view style="width: 60%">
+          <view class="title-text"><text>{{item.title}}</text></view>
+          <view class="description-text"><text>{{item.description}}</text></view>
+        </view>
+      </view>
+
+      <view class="button-row">
+        <button class="button" bindtap="redeemTicket" data-id="{{item.id}}">
+          <text>使用票卷</text>
+        </button>
+        <button class="button" bindtap="openProductDetail" data-id="{{item.id}}">
+          <text>购买票卷</text>
+        </button>
+      </view>
+
+    </view>
+  </view>
+
+
+  <!-- <view class="cu-item text-red">
+    <view class="content bg-red shadow-blur">
+      <view class="time">1:00pm</view>
+      <text>【喵星】 MX-12138 已揽收，准备发往银河系</text>
+    </view>
+  </view>
+
+  <view class="cu-item text-red">
+    <view class="content bg-red shadow-blur">
+      <view class="time">3:00pm</view>
+      <text>【喵星】 MX-12138 已揽收，准备发往银河系</text>
+    </view>
+  </view>
+
+  <view class="cu-item text-red">
+    <view class="content bg-red shadow-blur">
+      <view class="time">6:00pm</view>
+      <text>【喵星】 MX-12138 已揽收，准备发往银河系</text>
+    </view>
+  </view>
+
+  <view class="cu-item text-red">
+    <view class="content bg-red shadow-blur">
+      <view class="time">9:00pm</view>
+      <text>【喵星】 MX-12138 已揽收，准备发往银河系</text>
+    </view>
+  </view> -->
+
+</view>
+
+<image 
+  src="{{floatingButtonSource}}" class="floating-button" bindtap="navigateToSelections">
+</image>

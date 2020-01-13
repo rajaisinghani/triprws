@@ -1,0 +1,23 @@
+<!--pages/queue_registration/queue_registration.wxml-->
+
+<cu-custom bgColor="bg-gradual-red" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">Queue Registration</view>
+</cu-custom>
+
+<view class="main">
+  <image class="image" src="{{queue.image}}"></image>
+  <view class="text-container">
+    <view class="header-text red">
+      <text>Register for a queue</text>
+    </view>
+    <view class="title-text">
+      <text>{{queue.title}}</text>
+    </view>
+    <view class="description-text">
+      <text>{{queue.description}}</text>
+    </view>
+    <button bindtap="register" class="button">Register now</button>
+  </view>
+
+</view>

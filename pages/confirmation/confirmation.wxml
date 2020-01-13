@@ -1,0 +1,41 @@
+<!--pages/confirmation/confirmation.wxml-->
+<cu-custom bgColor="bg-gradual-red" isBack="{{true}}">
+	<view slot="backText">返回</view>
+</cu-custom>
+
+<view class="main">
+  <view class="top-section">
+    <image src="../../assets/tick.png" class="tick"></image>
+    <view>
+      <text class="title-text">感谢您的订购!</text>
+    </view>
+    <view style="text-align: center; margin: 10px auto">
+      <view><text class="description-text">订票记录编号 </text></view>
+      <view><text class="red-text description-text">DW6BSTI3GT</text></view>
+    </view>
+    <view class="button-row">
+      <button class="button red" bindtap="qrCode">qr code</button>
+      <button class="button black" bindtap="viewTicket">e-ticket</button>
+    </view> 
+      <button class="button green" style="width: 90%" bindtap="navigateHome">Home</button>
+  </view>
+
+  <view style="text-align: center; width: 100%; background-color: #f7f7f7; padding:10px">
+    <text class="description-text grey">购物车摘要</text>
+  </view>
+  
+  <view class="cart-summary">
+    <view class="row" wx:for="{{information}}" wx:key="{{item.id}}">
+      <view style="width: 70%">
+        <view class="title-text"><text>{{item.title}}</text></view>
+        <view class="excerpt-text grey"><text>{{item.excerpt}}</text></view>
+      </view>
+      <view style="margin-top: auto; margin-bottom: auto">
+        <text>x 1</text>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+
