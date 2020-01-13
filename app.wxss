@@ -1,0 +1,1 @@
+@import "colorui/main.wxss";@import "colorui/icon.wxss";@font-face{font-family:'FZSuXSLSJW';src:url("https://wechat.useritech.com/asset/fonts/ProximaNova-Regular.woff")}view,page,text,button{font-family:'FZSuXSLSJW'}.container{height:100%;font-size:14px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:200rpx 0;box-sizing:border-box}

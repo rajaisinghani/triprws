@@ -1,0 +1,45 @@
+<!--components/product-detail/product-detail.wxml-->
+<cu-custom bgColor="bg-gradual-red" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">产品详情</view>
+</cu-custom>
+
+<view class="main">
+  <image style="width: 100%" src="https://wechat.useritech.com/uploads/attractions/{{information.image}}" mode="scaleToFill"></image>
+  <view class="text-container">
+    <view class="header">
+      <view style="display: flex; flex-direction: row; justify-content: space-between">
+        <text class="title-text">{{information.title}}</text>
+        <text class="red title-text">${{information.price}}</text>
+      </view>
+      <view class="excerpt-text">
+        <text>{{information.excerpt}}</text>
+      </view>
+      <view class="review">
+        <text>{{information.review}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="text-container">
+    <text>{{information.description}}</text>
+  </view>
+
+  <view class="text-container">
+    <view style="margin-bottom: 10px">
+      <text class="header border">购票资讯</text>
+    </view>
+    <text>{{confirmationText}}</text>
+  </view>
+
+  <view class="bottom-cart">
+    <view class="image-wrapper">
+      <image style="height:40px; width: 40px;" src="../../assets/shopping-cart.png" mode="scaleToFill"></image>
+      <text style="position: relative; bottom: 10px">购物车</text>
+    </view>
+    <button class="button" bindtap="addToCart">加入购物车</button>
+  </view>
+</view>
+
+
+

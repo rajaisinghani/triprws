@@ -1,0 +1,20 @@
+<!--components/image/image.wxml-->
+<cu-custom bgColor="bg-gradual-red" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">购物车</view>
+</cu-custom>
+
+<view class="main">
+  <image class="icon" src="../../assets/tick.png"></image>
+  <view class="text">
+    <text>谢谢你的购买</text>
+  </view>
+  <view class="text">
+    <text>名胜{{url}}</text>
+  </view>
+  <image src="https://wechat.useritech.com/uploads/moments/{{url}}" class="image"></image>
+  <view class="button-container">
+    <button class="button black" bindtap="share">分享</button>
+    <button class="button red" bindtap="close">关闭</button>
+  </view>
+</view>

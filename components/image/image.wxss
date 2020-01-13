@@ -1,0 +1,47 @@
+/* components/image/image.wxss */
+.main {
+  width: 100%;
+  height: 100%;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100rpx auto;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+}
+
+.image {
+  width: 100%;
+  margin: 20px;
+}
+
+.button {
+  color: white;
+  text-transform: uppercase;
+  width: 40%;
+}
+
+.text {
+  font-size: 24px;
+  color: black;
+  font-weight: bold;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.black {
+  background-color:#504f4f;
+}
+
+.red {
+  background: crimson;
+}
